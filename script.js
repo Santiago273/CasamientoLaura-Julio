@@ -327,10 +327,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Recolección y validación de platos
         const cantTradicional = parseInt(document.getElementById('menu_tradicional')?.value || 0, 10);
         const cantCeliaco = parseInt(document.getElementById('menu_celiaco')?.value || 0, 10);
-        const cantInfantil = parseInt(document.getElementById('menu_infantil')?.value || 0, 10);
+        const cantVegano = parseInt(document.getElementById('menu_vegano')?.value || 0, 10); // <--- CAMBIO AQUÍ
         const observaciones = document.getElementById('menu_observaciones')?.value.trim() || '';
 
-        const totalPlatos = cantTradicional + cantCeliaco + cantInfantil;
+        const totalPlatos = cantTradicional + cantCeliaco + cantVegano;
 
         if (totalPlatos !== integrantes) {
             mostrarMensaje(`Indicaste ${integrantes} personas en total, pero la suma de los menús da ${totalPlatos}. Ajustá las cantidades.`, "error");
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let menuDetalle = [];
         if (cantTradicional > 0) menuDetalle.push(`Tradicional: ${cantTradicional}`);
         if (cantCeliaco > 0) menuDetalle.push(`Celíaco: ${cantCeliaco}`);
-        if (cantInfantil > 0) menuDetalle.push(`Infantil: ${cantInfantil}`);
+        if (cantVegano > 0) menuDetalle.push(`Vegano: ${cantVegano}`); // <--- CAMBIO AQUÍ
 
         let menuFinal = menuDetalle.join(' | ');
         if (observaciones) {
