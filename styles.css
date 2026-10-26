@@ -1,0 +1,876 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f5f0;
+    font-family: 'Montserrat', sans-serif;
+    color: #4a453f;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    background-image: radial-gradient(#e4ded4 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tarjeta Principal */
+.invite-card {
+    background: #ffffff;
+    padding: 55px 35px;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 15px 45px rgba(44, 38, 28, 0.08);
+    border: 1px solid #ebd9b8;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.invite-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Monograma */
+.monogram-badge {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #b59b61;
+    border-radius: 50%;
+    margin: 0 auto 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #b59b61;
+    letter-spacing: 2px;
+}
+
+/* Header */
+.tagline {
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+    color: #b59b61;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.couple-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.4rem;
+    font-weight: 300;
+    color: #2b2824;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.couple-names .amp {
+    font-family: 'Alex Brush', cursive;
+    color: #b59b61;
+    font-size: 2.8rem;
+    display: inline-block;
+    margin: 0 6px;
+}
+
+.intro-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #7a7267;
+    margin-bottom: 25px;
+}
+
+/* Imagen Hero Delicada (Ajustada para que entren rosas y anillos) */
+.card-hero-image-wrapper {
+    width: 100%;
+    max-width: 320px;
+    height: 380px; /* Más altura para abarcar tanto flores como los anillos */
+    margin: 0 auto 25px auto;
+    border-radius: 160px 160px 8px 8px; /* Arco clásico de boda más pronunciado */
+    overflow: hidden;
+    border: 1px solid #ebd9b8;
+    box-shadow: 0 10px 30px rgba(181, 155, 97, 0.15);
+    position: relative;
+    background-color: #faf7f2;
+}
+
+.card-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%; /* Centra la vista hacia abajo donde descansan las alianzas */
+    display: block;
+    transition: transform 1.2s ease;
+}
+
+.card-hero-image:hover {
+    transform: scale(1.03);
+}
+
+/* Cuenta Regresiva */
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.count-unit {
+    display: flex;
+    flex-direction: column;
+    min-width: 55px;
+}
+
+.count-unit .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #b59b61;
+}
+
+.count-unit .label {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #8c8275;
+}
+
+.count-divider {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #d6c5a5;
+    margin-top: -15px;
+}
+
+/* Separadores */
+.gold-hr {
+    width: 60px;
+    margin: 28px auto;
+    border: 0;
+    border-top: 1px solid #b59b61;
+}
+
+/* Fecha */
+.date-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.day-text, .month-text {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: #7a7267;
+    text-transform: uppercase;
+}
+
+.big-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.2rem;
+    font-weight: 300;
+    line-height: 1;
+    color: #b59b61;
+    margin: 4px 0;
+}
+
+/* Ubicación Única Centrada */
+.single-location-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.single-box {
+    max-width: 320px;
+    width: 100%;
+}
+
+.location-box .icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.location-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: #2b2824;
+    margin-bottom: 6px;
+}
+
+.location-box .time {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: #b59b61;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.location-box .place-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #4a453f;
+}
+
+.location-box .place-address {
+    font-size: 0.8rem;
+    color: #8c8275;
+    margin-bottom: 14px;
+}
+
+.btn-map {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #b59b61;
+    border: 1px solid #ebd9b8;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.btn-map:hover {
+    border-color: #b59b61;
+    background-color: #b59b61;
+    color: #ffffff;
+}
+
+/* Información Extra */
+.info-extra {
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+.info-block {
+    margin-bottom: 22px;
+}
+
+.info-block h4 {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    color: #2b2824;
+    margin-bottom: 5px;
+}
+
+.dress-val {
+    font-weight: 500;
+    color: #b59b61;
+}
+
+.note-dress {
+    font-size: 0.75rem;
+    color: #8c8275;
+    font-style: italic;
+    display: block;
+}
+
+/* Alias Bancario */
+.alias-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 10px;
+    background: #fdfaf5;
+    border: 1px dashed #ebd9b8;
+    padding: 10px 14px;
+    margin: 14px auto 0 auto;
+    border-radius: 6px;
+    max-width: 100%;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.alias-box strong {
+    color: #b59b61;
+    letter-spacing: 0.5px;
+    word-break: break-all;
+    font-size: 0.95rem;
+}
+
+.btn-copy {
+    background: #b59b61;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-copy:hover {
+    background: #997f48;
+}
+
+/* ========================================================
+   OPTIMIZACIÓN RESPONSIVE PARA SMARTPHONES (≤ 480px)
+   ======================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 12px 8px;
+    }
+
+    .invite-card {
+        padding: 38px 18px; /* Menos padding interno para que nada desborde */
+        width: 100%;
+    }
+
+    .couple-names {
+        font-size: 2.7rem;
+    }
+
+    .couple-names .amp {
+        font-size: 2.2rem;
+    }
+
+    .intro-quote {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    /* Imagen hero adaptada a pantallas chicas */
+    .card-hero-image-wrapper {
+        max-width: 100%;
+        height: 320px;
+        border-radius: 140px 140px 6px 6px;
+    }
+
+    /* Contador */
+    .countdown-wrapper {
+        gap: 6px;
+    }
+
+    .count-unit {
+        min-width: 44px;
+    }
+
+    .count-unit .num {
+        font-size: 1.6rem;
+    }
+
+    .count-divider {
+        font-size: 1.2rem;
+    }
+
+    .big-day {
+        font-size: 3.4rem;
+    }
+
+    /* Alias en dos líneas centradas en pantallas muy estrechas */
+    .alias-box {
+        width: 100%;
+        flex-direction: column;
+        padding: 10px 8px;
+    }
+
+    .alias-box strong {
+        font-size: 0.9rem;
+    }
+
+    .btn-copy {
+        width: 100%;
+        max-width: 180px;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 30px 18px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+.copy-feedback {
+    display: block;
+    font-size: 0.72rem;
+    color: #276749;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.copy-feedback.show {
+    opacity: 1;
+}
+
+.deadline-note {
+    font-size: 0.8rem;
+    margin-top: 15px;
+    color: #7a7267;
+}
+
+.deadline-note span {
+    color: #b59b61;
+    font-weight: 600;
+}
+
+/* Botones Principales */
+.btn {
+    background: none;
+    border: 1px solid #b59b61;
+    color: #b59b61;
+    padding: 14px 30px;
+    cursor: pointer;
+    letter-spacing: 2.5px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-main {
+    margin-top: 25px;
+    background-color: #b59b61;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(181, 155, 97, 0.25);
+}
+
+.btn-main:hover {
+    background-color: #9c834d;
+    border-color: #9c834d;
+    box-shadow: 0 6px 20px rgba(181, 155, 97, 0.35);
+}
+
+.btn-confirm {
+    background-color: #b59b61;
+    color: white;
+    width: 100%;
+}
+
+.btn-confirm:hover {
+    background-color: #9c834d;
+}
+
+.btn-cancel {
+    background: none;
+    border: none;
+    color: #8c8275;
+    cursor: pointer;
+    font-size: 0.75rem;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+.footer-msg {
+    margin-top: 35px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #8c8275;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 26, 21, 0.55);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #ebd9b8;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.modal-close-icon {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: #8c8275;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-header .modal-tag {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: #b59b61;
+    text-transform: uppercase;
+}
+
+.modal-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #2b2824;
+    margin: 4px 0 8px 0;
+}
+
+.modal-header p {
+    font-size: 0.8rem;
+    color: #7a7267;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.field-group {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.field-group label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    color: #6d665c;
+    margin-bottom: 4px;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px 14px;
+    margin: 6px 0;
+    border: 1px solid #e5dfd3;
+    background: #faf9f6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    color: #333;
+    outline: none;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #b59b61;
+    background: #ffffff;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Estados de feedback */
+.status-message {
+    font-size: 0.8rem;
+    margin-top: 15px;
+    padding: 12px;
+    display: none;
+    border-radius: 2px;
+    line-height: 1.4;
+}
+
+.status-error {
+    background: #fff5f5;
+    color: #c53030;
+    border: 1px solid #feb2b2;
+}
+
+.status-success {
+    background: #f0fff4;
+    color: #276749;
+    border: 1px solid #9ae6b4;
+}
+
+.menu-selection-group {
+    margin-top: 15px;
+    background: #faf8f5;
+    padding: 12px;
+    border: 1px solid #ebd9b8;
+    border-radius: 4px;
+}
+
+.section-sublabel {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #4a453f;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.menu-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 6px 10px;
+    border: 1px solid #ede8de;
+    border-radius: 3px;
+}
+
+.menu-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+    color: #4a453f;
+}
+
+.menu-qty-input {
+    width: 60px !important;
+    padding: 4px 6px !important;
+    margin: 0 !important;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid #dcd5c9 !important;
+}
+
+/* Tarjeta de Confirmación Exitosa */
+.success-card {
+    display: none;
+    text-align: center;
+    padding: 20px 10px 10px 10px;
+    animation: fadeInScale 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.success-seal {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    background: #fdfaf5;
+    border: 1px solid #ebd9b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 15px rgba(181, 155, 97, 0.15);
+}
+
+.success-tag {
+    font-size: 0.72rem;
+    letter-spacing: 4px;
+    color: #b59b61;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.success-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #2b2824;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.success-guest {
+    font-weight: 500;
+    color: #b59b61;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.success-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #7a7267;
+    margin-bottom: 20px;
+}
+
+.success-divider {
+    color: #b59b61;
+    font-size: 0.75rem;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.btn-gold-outline {
+    background: transparent;
+    border: 1px solid #b59b61;
+    color: #b59b61;
+    padding: 10px 28px;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-gold-outline:hover {
+    background: #b59b61;
+    color: #ffffff;
+}
+
+/* Iconos SVG */
+.event-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fcf9f4;
+    border: 1px solid #ebd9b8;
+}
+
+.gold-svg {
+    width: 24px;
+    height: 24px;
+    color: #b59b61;
+}
+
+.menu-icon-svg {
+    width: 17px;
+    height: 17px;
+    color: #b59b61;
+    flex-shrink: 0;
+}
+
+.svg-inline-mini {
+    width: 16px;
+    height: 16px;
+    color: #b59b61;
+    vertical-align: middle;
+}
+
+.seal-svg {
+    width: 32px;
+    height: 32px;
+    color: #b59b61;
+}
+
+.cupo-aviso {
+    display: block;
+    font-size: 0.72rem;
+    color: #b59b61;
+    font-weight: 500;
+    margin-top: 4px;
+    text-align: left;
+    min-height: 16px;
+}
+
+/* Botón Flotante de Música */
+.music-player {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 150;
+}
+
+.btn-music {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #ebd9b8;
+    color: #b59b61;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(44, 38, 28, 0.12);
+    position: relative;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.btn-music:hover {
+    transform: scale(1.08);
+    border-color: #b59b61;
+    background-color: #fdfaf5;
+}
+
+.music-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Animación de rotación cuando la música está sonando */
+.btn-music.playing .music-icon {
+    animation: rotateDisc 4s linear infinite;
+}
+
+@keyframes rotateDisc {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Ondas delicadas alrededor del botón cuando suena */
+.btn-music.playing::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #b59b61;
+    animation: pulseWave 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes pulseWave {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+    .music-player {
+        bottom: 18px;
+        right: 18px;
+    }
+    .btn-music {
+        width: 44px;
+        height: 44px;
+    }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - Laura & Julio</title>
+    <!-- Favicon minimalista en SVG con iniciales -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22none%22 stroke=%22%23b59b61%22 stroke-width=%224%22/><text y=%2258%22 x=%2250%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2238%22 fill=%22%23b59b61%22>L&amp;J</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <article class="invite-card" id="card">
+            
+            <!-- Monograma superior -->
+            <div class="monogram-badge">
+                <span>L & J</span>
+            </div>
+
+            <header class="header-section">
+                <p class="tagline">¡NOS CASAMOS!</p>
+                <h1 class="couple-names">Laura <span class="amp">&</span> Julio</h1>
+                <p class="intro-quote">
+                    "Hay momentos en la vida que son inolvidables, y compartirlos con quienes más queremos los hace eternos."
+                </p>
+            </header>
+
+            <!-- Imagen Delicada de Rosas y Alianzas -->
+            <div class="card-hero-image-wrapper">
+                <img src="boda-portada.jpeg" alt="Alianzas y Rosas Laura y Julio" class="card-hero-image">
+            </div>
+
+            <!-- Contador Regresivo -->
+            <section class="countdown-wrapper" aria-label="Cuenta regresiva">
+                <div class="count-unit">
+                    <span id="days" class="num">00</span>
+                    <span class="label">Días</span>
+                </div>
+                <span class="count-divider">:</span>
+                <div class="count-unit">
+                    <span id="hours" class="num">00</span>
+                    <span class="label">Hs</span>
+                </div>
+                <span class="count-divider">:</span>
+                <div class="count-unit">
+                    <span id="minutes" class="num">00</span>
+                    <span class="label">Min</span>
+                </div>
+                <span class="count-divider">:</span>
+                <div class="count-unit">
+                    <span id="seconds" class="num">00</span>
+                    <span class="label">Seg</span>
+                </div>
+            </section>
+
+            <hr class="gold-hr">
+
+            <!-- Fecha Principal -->
+            <section class="date-section">
+                <span class="day-text">SÁBADO</span>
+                <span class="big-day">22</span>
+                <span class="month-text">NOVIEMBRE · 2026</span>
+            </section>
+
+            <!-- Ubicación: Fiesta Única Centrada -->
+            <section class="single-location-wrapper">
+                <div class="location-box single-box">
+                    <div class="event-icon-wrapper">
+                        <!-- Icono Copas de brindis / Celebración -->
+                        <svg class="gold-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3l3 8a3 3 0 0 0 3-1l3-7" />
+                            <path d="M5 3h6l-1 5a3 3 0 0 1-3 2.5A3 3 0 0 1 5 8L4 3z" />
+                            <path d="M14 6h6l-1 5a3 3 0 0 1-3 2.5A3 3 0 0 1 14 11l-1-5z" />
+                            <path d="M7 14v6M17 14v6" />
+                            <path d="M4 20h6M14 20h6" />
+                        </svg>
+                    </div>
+                    <h3>FIESTA</h3>
+                    <p class="time">21:00 HORAS</p>
+                    <p class="place-name">Torino Eventos</p>
+                    <p class="place-address">Severo del Castillo 3905, Corralitos, Mendoza</p>
+                    <a href="https://www.google.com/maps?q=-32.90706253051758,-68.70096588134766&z=17&hl=es" target="_blank" rel="noopener noreferrer" class="btn-map">CÓMO LLEGAR</a>
+                </div>
+            </section>
+
+            <hr class="gold-hr">
+
+            <!-- Dress Code y Regalos -->
+            <section class="info-extra">
+                <div class="info-block">
+                    <h4>CÓDIGO DE VESTIMENTA</h4>
+                    <p class="dress-val">Elegante / Formal</p>
+                    <small class="note-dress">Agradecemos reservar los tonos blancos y marfil para la novia</small>
+                </div>
+
+                <div class="info-block gift-block">
+                    <h4>REGALO & LUNA DE MIEL</h4>
+                    <p>Tu presencia es nuestro mayor regalo. Si deseas colaborar con nuestro viaje de bodas:</p>
+                    
+                    <div class="alias-box">
+                        <svg class="svg-inline-mini" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                            <rect x="3" y="8" width="18" height="12" rx="1" />
+                            <path d="M12 8v12M3 12h18" />
+                            <path d="M12 8a3 3 0 1 0-3-3c0 2 3 3 3 3z" />
+                            <path d="M12 8a3 3 0 1 1 3-3c0 2-3 3-3 3z" />
+                        </svg>
+                        <span class="alias-label">Alias:</span>
+                        <strong id="aliasText">julio.miguel.andujar</strong>
+                        <button type="button" id="copyAliasBtn" class="btn-copy" title="Copiar alias">
+                            <span>Copiar Alias</span>
+                        </button>
+                    </div>
+                    <span id="copyFeedback" class="copy-feedback">¡Copiado en el portapapeles!</span>
+                </div>
+
+                <p class="deadline-note">
+                    <strong>Confirmación de asistencia obligatoria antes del:</strong><br>
+                    <span>13 de Noviembre de 2026</span>
+                </p>
+            </section>
+
+            <button id="openModalBtn" class="btn btn-main">CONFIRMAR ASISTENCIA</button>
+
+            <footer class="footer-msg">
+                <p>¡Esperamos compartir este día inolvidable junto a vos!</p>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Modal RSVP -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button type="button" id="closeModalIcon" class="modal-close-icon" aria-label="Cerrar">&times;</button>
+            <div class="modal-header">
+                <span class="modal-tag">RSVP</span>
+                <h3>Confirmar Asistencia</h3>
+                <p>Ingresá tus datos para encontrarte en la lista de invitados.</p>
+            </div>
+
+            <form id="rsvpForm">
+                <div class="field-group">
+                    <label for="invitadoSelect">Seleccioná tu nombre en la lista:</label>
+                    <select id="invitadoSelect" required>
+                        <option value="" disabled selected>Cargando lista de invitados...</option>
+                    </select>
+                    <small id="cupoAviso" class="cupo-aviso"></small>
+                </div>
+
+                <input type="tel" id="telefono" placeholder="Teléfono / WhatsApp" required autocomplete="tel">
+                
+                <div class="field-group">
+                    <label for="integrantes">¿Cuántas personas asistirán en total?</label>
+                    <input type="number" id="integrantes" min="1" max="10" placeholder="Ej: 2" required>
+                </div>
+
+                <div class="field-group menu-selection-group">
+                    <label class="section-sublabel">Preferencia de menú (especificá cuántos por cada uno):</label>
+                
+                    <div class="menu-options-list">
+                        <!-- Menú Tradicional -->
+                        <div class="menu-item">
+                            <span class="menu-name">
+                                <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                                    <path d="M18 2v8a2 2 0 0 1-2 2h-1M15 2v10M12 2v20M5 2v6a3 3 0 0 0 6 0V2" />
+                                    <path d="M8 8v14" />
+                                </svg>
+                                Tradicional
+                            </span>
+                            <input type="number" id="menu_tradicional" class="menu-qty-input" min="0" max="10" value="1">
+                        </div>
+                        
+                        <!-- Menú Celíaco -->
+                        <div class="menu-item">
+                            <span class="menu-name">
+                                <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                                    <path d="M4 20l16-16M14 4c2 0 4 2 4 4s-2 4-4 4M10 8c2 0 4 2 4 4s-2 4-4 4M6 12c2 0 4 2 4 4s-2 4-4 4" />
+                                </svg>
+                                Celíaco / Sin TACC
+                            </span>
+                            <input type="number" id="menu_celiaco" class="menu-qty-input" min="0" max="10" value="0">
+                        </div>
+                        
+                        <!-- Menú Infantil -->
+                        <div class="menu-item">
+                            <span class="menu-name">
+                                <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                                    <path d="M12 2a4 4 0 0 1 4 4c0 3-4 6-4 6s-4-3-4-6a4 4 0 0 1 4-4z" />
+                                    <circle cx="12" cy="15" r="5" />
+                                </svg>
+                                Infantil
+                            </span>
+                            <input type="number" id="menu_infantil" class="menu-qty-input" min="0" max="10" value="0">
+                        </div>
+                    </div>
+
+                    <input type="text" id="menu_observaciones" placeholder="¿Alguna alergia o detalle extra? (opcional)" style="margin-top: 8px;">
+                </div>  
+
+                <div id="statusMsg" class="status-message"></div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-confirm" id="submitBtn">CONFIRMAR</button>
+                    <button type="button" id="closeModalBtn" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+
+            <!-- Tarjeta de Éxito con Anillos Entrelazados en SVG -->
+            <div id="successCard" class="success-card">
+                <div class="success-seal">
+                    <svg class="seal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <circle cx="9" cy="13" r="5" />
+                        <circle cx="15" cy="11" r="5" />
+                        <path d="m14 4 1-1 1 1-1 1z" fill="currentColor" />
+                    </svg>
+                </div>
+                <span class="success-tag">¡CONFIRMADO!</span>
+                <h3 class="success-title">¡Qué alegría tenerte con nosotros!</h3>
+                <p id="successGuestName" class="success-guest"></p>
+                <p class="success-text">
+                    Tu lugar ya está reservado. Nos llena de emoción poder celebrar este día tan especial y compartir cada momento juntos.
+                </p>
+                <div class="success-divider">✦ ✦ ✦</div>
+                <button type="button" id="closeSuccessBtn" class="btn btn-gold-outline">CERRAR</button>
+            </div>
+        </div>
+    </div>
+    <!-- Reproductor Flotante de Música -->
+    <div class="music-player" id="musicPlayer" title="Reproducir / Pausar música">
+        <audio id="weddingAudio" src="cancion.mp3" preload="metadata"></audio>
+        <button type="button" id="musicToggleBtn" class="btn-music" aria-label="Música">
+            <!-- Icono de Nota Musical / Sonido -->
+            <svg class="music-icon" id="musicIconPlay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 18V5l12-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
+            </svg>
+            <span class="music-wave" id="musicWave"></span>
+        </button>
+    </div>
+
+    <!-- Librería liviana de confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
